@@ -16,7 +16,9 @@ namespace FRI_FEB_8
 
             Elevator e = new Elevator();
 
-            e.run();
+            e.setup();
+
+            e.TraverseList();
 
         }
 
@@ -44,17 +46,33 @@ namespace FRI_FEB_8
 
     {
 
-        FirstFloor = new Node();
+        Node Head;
 
-        SecondFloor = new Node();
+        Node FirstFloor;
 
-        ThirdFloor = new Node();
+        Node SecondFloor;
 
-        FourthFloor = new Node();
+        Node ThirdFloor;
+
+        Node FourthFloor;
 
 
 
-        FirstFloor.FloorNumber = "First Floor";
+        public void setup()
+
+        {
+
+            FirstFloor = new Node();
+
+            SecondFloor = new Node();
+
+            ThirdFloor = new Node();
+
+            FourthFloor = new Node();
+
+            Head = FirstFloor;
+
+            FirstFloor.FloorNumber = "First Floor";
 
             FirstFloor.elevatorUp = SecondFloor;
 
@@ -69,6 +87,40 @@ namespace FRI_FEB_8
             FourthFloor.FloorNumber = "Fourth Floor";
 
             FourthFloor.elevatorUp = null;
+
+        }
+
+
+
+        public void TraverseList()
+
+        {
+
+            Node temp;
+
+            temp = Head;
+
+
+
+            // where am I going to start?
+
+            Console.WriteLine("The first floor is " + Head.FloorNumber);
+
+            while (temp != null)
+
+            {
+
+                // NOW GET TO THE SECOND FLOOR!!!!
+
+                temp = temp.elevatorUp;
+
+                Console.WriteLine(temp.FloorNumber);
+
+
+
+            }
+
+
 
         }
 

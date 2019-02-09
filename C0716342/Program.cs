@@ -44,33 +44,31 @@ namespace FRI_FEB_8
 
     {
 
-        Node FirstFloor;
+        FirstFloor = new Node();
 
-        Node SecondFloor;
+        SecondFloor = new Node();
 
-        Node ThirdFloor;
+        ThirdFloor = new Node();
 
-        Node FourthFloor;
+        FourthFloor = new Node();
 
 
 
-        public void run()
-
-        {
-
-            FirstFloor = new Node();
-
-            FirstFloor.FloorNumber = "First Floor";
-
-            Console.WriteLine("floor number is {0} ", FirstFloor.FloorNumber);
+        FirstFloor.FloorNumber = "First Floor";
 
             FirstFloor.elevatorUp = SecondFloor;
 
             SecondFloor.FloorNumber = "Second Floor";
 
+            SecondFloor.elevatorUp = ThirdFloor;
 
+            ThirdFloor.FloorNumber = "Third Floor";
 
-            Console.WriteLine("floor number is {0} ", SecondFloor.FloorNumber);
+            ThirdFloor.elevatorUp = FourthFloor;
+
+            FourthFloor.FloorNumber = "Fourth Floor";
+
+            FourthFloor.elevatorUp = null;
 
         }
 
